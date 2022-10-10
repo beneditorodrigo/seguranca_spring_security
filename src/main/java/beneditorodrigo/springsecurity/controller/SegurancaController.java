@@ -11,12 +11,10 @@ public class SegurancaController {
         return "Bem-vindo a segurança com Spring Security!";
     }
     @GetMapping("/users")
-    @PreAuthorize("hasAnyRole('MANAGERS','USERS')")
     public String users() {
         return "Nível de usuário autorizado!";
     }
     @GetMapping("/managers")
-    @PreAuthorize("hasRole('MANAGERS')")
     public String managers() {
         return "Nível de administrador autorizado!";
     }
